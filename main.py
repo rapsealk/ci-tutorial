@@ -8,8 +8,9 @@ def is_qualified(scores):
     다섯 과목의 점수를 전달받아 시험 합격 여부를 결정합니다.
     * 합격 조건:
         1. 모든 과목의 평균이 60점 이상이어야 한다.
+        2. 각 과목은 40점 이상이어야 한다.
     """
-    return np.mean(scores) >= 60
+    return np.mean(scores) >= 60 and np.all(scores >= 40)
 
 
 if __name__ == "__main__":
